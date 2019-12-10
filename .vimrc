@@ -1,54 +1,57 @@
+"basic settings
+
 filetype plugin indent on
 syntax on
-set visualbell
+set encoding=utf-8
+set visualbell noerrorbells "no beeping
+set hlsearch incsearch
+set nowrap "no line wrap
+set nu ruler "line numbers
+set foldlevel=1 "default fold level
+set nobackup noswapfile "no backup and swaps
+set ignorecase smartcase "search options
+set foldmethod=marker "fold at {{
+set nospell "no spell check
+set ttyfast "scroll faster
+set showmode "show what mode we're in
+set showcmd "show cmd?
+set tabstop=2 shiftwidth=2 expandtab "default tab with, 2 because we're on small screen
+set smarttab expandtab "auto insert blanks and expand tabs to space
+set so=7 "lines before cursor
+set backspace=indent,eol,start "backspace behaviour
+set autoread "reload if file changed
+set history=500 "command line history
+set autochdir "set working directory to current file
+set cmdheight=2 "cmd line height
+set whichwrap+=<,>,h,l "cursor automatically wrap left and right
+set lazyredraw "reduce update frequency
+let mapleader = "," "leader
 
-set undofile " Maintain undo history between sessions
+"map esc to 
+inoremap jk <Esc> 
+"use ; for commands
+nnoremap ; :
+"space to toggle folds
+nnoremap <Space> za
+vnoremap <Space> za
+"hide highlight of searches
+nmap <silent> // :nohlsearch<CR>
+"reload vimrc
+nmap <silent> <leader>rv :source ~/.vimrc<CR>
 
-set backspace=indent,eol,start
-set autoread
-set history=500
-
-set autochdir
-
-set so=7
-set ruler
-set cmdheight=2
-set whichwrap+=<,>,h,l
-
-set ignorecase
-set smartcase
-set hlsearch
-set incsearch
-set lazyredraw
-
-set expandtab
-set smarttab
-set shiftwidth=2
-set tabstop=2
-
-set ai
-set si
-set wrap
-set number
-
-"set foldmethod=indent
-
-inoremap jk <Esc>
-"inoremap kj <Esc>
-
-let g:go_fmt_command = "goimports"
-let g:go_auto_type_info = 1
-
+"nerdtree
 :nnoremap <C-n> :NERDTreeToggle<CR>
 
+"go specific
+let g:go_fmt_command = "goimports"
+let g:go_auto_type_info = 1
 au BufReadPost *.gotmpl set syntax=gotexttmpl
 
+"vue specific
 let g:vue_pre_processors = []
-
 let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
-"set rtp+=~/tabnine-vim
 
 "paste mode
 set pastetoggle=<F2>
