@@ -11,6 +11,8 @@ sudo apt-get install golang-go -y
 #nodejs
 sudo snap install node --channel=13/stable --classic
 
+#vue-cli
+sudo yarn global add @vue/cli
 
 #docker
 sudo apt-get install \
@@ -45,20 +47,3 @@ git clone https://github.com/prettier/vim-prettier ~/.vim/pack/filetypes/start/v
 git clone https://github.com/scrooloose/nerdtree.git ~/.vim/pack/all/start/nerdtree
 git clone https://github.com/vim-airline/vim-airline ~/.vim/pack/all/start/vim-airline
 git clone https://github.com/tpope/vim-fugitive.git ~/.vim/pack/all/start/vim-fugitive
-
-#pull out configs
-git clone --bare https://github.com/srliao/cfg.git $HOME/.cfg
-function config {
-   /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@
-}
-mkdir -p .config-backup
-config checkout
-if [ $? = 0 ]; then
-  echo "Checked out config.";
-  else
-    echo "Backing up pre-existing dot files.";
-    config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .config-backup/{}
-fi;
-config checkout
-config config status.showUntrackedFiles no
-

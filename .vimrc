@@ -38,6 +38,11 @@ vnoremap <Space> za
 nmap <silent> // :nohlsearch<CR>
 "reload vimrc
 nmap <silent> <leader>rv :source ~/.vimrc<CR>
+"shift +H/L to navigate tabs
+nnoremap H gT
+nnoremap L gt
+nnoremap <C-t> :tabnew<CR>
+inoremap <C-t> <Esc>:tabnew<CR>
 
 "nerdtree
 :nnoremap <C-n> :NERDTreeToggle<CR>
