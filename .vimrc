@@ -9,8 +9,6 @@ set nowrap "no line wrap
 set nu ruler "line numbers
 set nobackup noswapfile "no backup and swaps
 set ignorecase smartcase "search options
-set foldmethod=syntax "folding 
-set foldlevel=1 "default fold level
 set nospell "no spell check
 set ttyfast "scroll faster
 set showmode "show what mode we're in
@@ -25,6 +23,10 @@ set autochdir "set working directory to current file
 set cmdheight=2 "cmd line height
 set whichwrap+=<,>,h,l "cursor automatically wrap left and right
 set lazyredraw "reduce update frequency
+"folding
+set foldmethod=indent "folding 
+set foldlevel=1 "default fold level
+set foldcolumn=2 "fold column on left
 "change file completion
 set wildmode=longest,list,full
 set wildmenu
