@@ -36,9 +36,6 @@ let mapleader = "," "leader
 inoremap jk <Esc> 
 "use ; for commands
 nnoremap ; :
-"insert blank lines
-map <Enter> o<ESC>
-map <S-Enter> O<ESC>
 "space to toggle folds
 nnoremap <Space> za
 vnoremap <Space> za
