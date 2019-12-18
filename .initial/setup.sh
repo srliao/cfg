@@ -14,6 +14,9 @@ sudo snap install node --channel=13/stable --classic
 #vue-cli
 sudo yarn global add @vue/cli
 
+#prettier
+sudo yarn global add prettier
+
 #docker
 sudo apt-get install \
     apt-transport-https \
